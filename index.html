@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rick and Morty API</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    <script src="api.js"></script>
   </head>
   <body>
     <div class="search-bar">
@@ -22,6 +20,14 @@
 
     <ul id="lista" class="character-list"></ul>
 
+    <div class="pagination">
+      <button onclick="previousPage()">Previous</button>
+      <span id="currentPage">1</span>
+      <button onclick="nextPage()">Next</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

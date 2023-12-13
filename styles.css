@@ -1,9 +1,26 @@
-body {
-  font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
   margin: 0;
   padding: 0;
-  background-color: #333;
-  color: #fff;
+  box-sizing: border-box;
+}
+
+:root {
+  --Poppins: "Poppins", sans-serif;
+  --Background: #130f40;
+  --CardBackground: #30336b;
+  --White: #fff;
+  --LifeTrue: #6ab04c;
+  --LifeFalse: #eb4d4b;
+  --SemiGray: #95afc0;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--Poppins);
+  font-weight: 400;
+  background-color: var(--Background);
 }
 
 .search-bar {
@@ -15,7 +32,7 @@ body {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 28px;
   margin-right: 10px;
 }
 
@@ -26,7 +43,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 28px;
 }
 
 .character-list {
@@ -38,22 +55,25 @@ body {
 }
 
 .character-item {
-  background-color: #444;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  margin: 10px;
-  padding: 10px;
-  min-width: 300px;
-  max-width: 300px;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
+  width: 600px;
+  height: 240px;
+  margin: 30px;
+  background-color: var(--CardBackground);
+  color: var(--White);
   display: flex;
-  flex-direction: row;
+  border-radius: 5px;
+  box-shadow: 0px 2px 21px -5px rgba(48, 51, 107, 1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 1s ease;
+}
+
+.character-item:hover {
+  transform: scale(1.1);
 }
 
 .character-item img {
-  max-width: 100px;
+  max-width: 300px;
   border-radius: 8px;
   margin-right: 10px;
   filter: brightness(75%);
@@ -95,4 +115,91 @@ body {
 
 .character-item span:last-child {
   margin-bottom: 0;
+}
+
+.character__bg {
+  height: 100%;
+  width: 229px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.character__header {
+  margin-bottom: 10px;
+}
+
+.character__info {
+  margin-bottom: 10px;
+}
+
+.character__texts {
+  width: 371px;
+  height: 100%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.character__texts-title {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.character__text-info {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.Alive {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  clip-path: circle(50%);
+  background-color: var(--LifeTrue);
+}
+
+.unknown {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  clip-path: circle(50%);
+  background-color: var(--SemiGray);
+}
+
+.Dead {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  clip-path: circle(50%);
+  background-color: var(--LifeFalse);
+}
+
+.character__info-title {
+  color: var(--SemiGray);
+  font-size: 15px;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+.pagination span {
+  font-size: 18px;
+  margin: 0 5px;
 }
